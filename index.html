@@ -2,22 +2,34 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Michael Škrášek - Software Engineer - portfolio">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 		<link rel="stylesheet" href="style.css"/>
+
+		<script>
+			window.onload = function() {
+				//render correct age int every class '.age'
+				let elements = document.getElementsByClassName("age");
+				let age = (new Date().getFullYear() - 2000);
+				for (let i = 0; i < elements.length; i++) {
+					elements[i].innerHTML = age;
+				}
+			}
+		</script>
 
 		<title>Michael Škrášek | CV</title>
 	</head>
 	<body>
 		<div id="svgData">
 			<!-- SVG files downloaded from https://www.svgrepo.com/ -->
-			<svg xmlns="http://www.w3.org/2000/svg" style="width:0;height:0;visibility:hidden;">
+			<svg xmlns="http://www.w3.org/2000/svg">
 				<symbol viewBox="0 0 64 64" id="icon-github">
-					<title>icon-github</title>
+					<title>GitHub</title>
 					<path stroke-width="0" fill="currentColor" d="M32 0 C14 0 0 14 0 32 0 53 19 62 22 62 24 62 24 61 24 60 L24 55 C17 57 14 53 13 50 13 50 13 49 11 47 10 46 6 44 10 44 13 44 15 48 15 48 18 52 22 51 24 50 24 48 26 46 26 46 18 45 12 42 12 31 12 27 13 24 15 22 15 22 13 18 15 13 15 13 20 13 24 17 27 15 37 15 40 17 44 13 49 13 49 13 51 20 49 22 49 22 51 24 52 27 52 31 52 42 45 45 38 46 39 47 40 49 40 52 L40 60 C40 61 40 62 42 62 45 62 64 53 64 32 64 14 50 0 32 0 Z"/>
 				</symbol>
 				<symbol viewBox="0 0 310 310" id="icon-twitter">
-					<title>icon-twitter</title>
+					<title>Twitter</title>
 					<path fill="currentColor" d="M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73
 						c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783
 						c-12.381-12.098-29.197-18.983-46.581-18.983c-36.695,0-66.549,29.853-66.549,66.547c0,2.89,0.183,5.764,0.545,8.598
@@ -32,7 +44,7 @@
 						C307.394,57.037,305.009,56.486,302.973,57.388z"/>
 				</symbol>
 				<symbol viewBox="0 0 382 382" id="icon-linkedin">
-					<title>icon-linkedin</title>
+					<title>LinkedIn</title>
 					<path fill="currentColor" d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889
 						C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056
 						H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806
@@ -44,10 +56,23 @@
 						L341.91,330.654L341.91,330.654z"/>
 				</symbol>
 				<symbol viewBox="0 0 256 200" id="icon-discord">
-					<title>icon-discord</title>
-					<path fill="currentColor" fill-rule="nonzero" d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z"/>
+					<title>Discord</title>
+					<path fill="currentColor" fill-rule="nonzero" d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,
+						0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,
+						14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,
+						16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,
+						198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,
+						164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,
+						160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,
+						175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,
+						164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,
+						123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,
+						94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,
+						135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,
+						82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z"/>
 				</symbol>
 				<symbol viewBox="0 0 100 100" id="icon-education" enable-background="new 0 0 100 100" xml:space="preserve">
+					<title>Education</title>
 					<path fill="currentColor" d="M49.9,51.1c-1.5,0.1-2.9-0.5-4.4-1c-7.9-2.6-15.8-5.2-23.6-7.9c-0.5-0.2-0.9-0.4-1.3-0.7
 						c-0.5-0.4-0.5-0.9,0-1.3c0.4-0.3,0.9-0.6,1.4-0.7c8.4-2.5,16.8-5,25.2-7.6c1.9-0.6,3.8-0.6,5.8,0c8.3,2.5,16.7,5,25,7.5
 						c0.5,0.2,1,0.4,1.5,0.7c0.6,0.4,0.6,1,0,1.4c-0.4,0.3-0.8,0.5-1.2,0.6c-8.3,2.8-16.7,5.6-25.1,8.3C52.1,50.9,51.1,51.1,49.9,51.1z"/>
@@ -59,7 +84,7 @@
 						c0.7-0.9,0.9-2.2,0.6-3.4c-0.4-1.7-1.1-3.2-1.9-4.7c-0.2-0.3-0.3-0.7-0.3-1c0-3.1,0-6.1,0-9.2c0-0.6-0.5-0.5-0.7-0.4L74.9,48.6z"/>
 				</symbol>
 				<symbol viewBox="0 0 488 488" id="icon-work">
-					<title>icon-work</title>
+					<title>Work</title>
 					<path fill="currentColor" d="M310.285,180.999c1.797,1.4,3.993,2.101,6.189,2.101c0.499,0,0.998,0,1.497-0.1c2.695-0.4,5.191-1.901,6.688-4.101
 						l93.038-132.644c2.795-4.001,2.296-9.503-1.198-12.904L385.454,2.84c-3.594-3.501-9.184-3.801-13.177-0.7L244,103.273
 						L115.723,2.14c-3.993-3.101-9.583-2.801-13.177,0.7L71.5,33.35c-3.494,3.401-3.993,8.903-1.198,12.904l93.038,132.644
@@ -69,16 +94,26 @@
 						L377.767,23.247l18.668,18.406l-82.057,117.039l-54.206-42.714L377.767,23.247z M173.622,158.691L91.565,41.653l18.667-18.406
 						l117.595,92.731L173.622,158.691z M304.794,413.776l-60.395,51.217v0l-61.193-51.217L244.3,234.617L304.794,413.776z
 						M244.3,187.801l-29.549-36.012l29.149-23.008l29.249,23.108L244.3,187.801z"/>
-			</symbol>
+				</symbol>
+				<symbol viewBox="-60 0 500 500" id="icon-project">
+					<title>Project</title>
+					<path fill="currentColor" d="M314.85,363.016l-8.786,8.786l-12.426,0.106l-27.164,0.233l-16.377,0.141v0.124H61.454v-30.367h174.389l0.004-0.524
+						l0.233-27.164l0.106-12.426l8.787-8.786l21.955-21.955H61.454v-30.367h235.842l20.245-20.245H61.454v-30.367h265.185v21.268
+						l61.454-61.454V0.424H0v511.152h388.094V289.771L314.85,363.016z M326.64,169.961H151.317v-30.367H326.64V169.961z M61.454,88.983
+						h265.185v30.367H61.454V88.983z M61.454,139.594h59.495v30.367H61.454V139.594z M61.454,291.428h151.608v30.367H61.454V291.428z"/>
+					<path fill="currentColor"  d="M506.423,101.568c-3.597-3.597-8.379-5.578-13.466-5.578c-5.086,0-9.868,1.981-13.465,5.577l-17.947,17.947l26.93,26.93
+						l17.947-17.947c3.596-3.596,5.577-8.378,5.577-13.465S510.019,105.164,506.423,101.568z"/>
+					<polygon fill="currentColor"  points="440.072,140.986 266.446,314.612 266.213,341.775 293.377,341.542 467.004,167.917"/>
+				</symbol>
 			</svg>
 		</div>
 
 		<div id="bar">
-			<section id="profile">
-				<img src="ich.png" alt="profile photo"/>
+			<div id="profile">
+				<a href="#"><img src="ich.jpg" alt="profile photo"/></a>
 				<div class="name">Michael Škrášek</div>
 				<a class="email" href="mailto:xskras01@vutbr.cz">xskras01@vutbr.cz</a>
-			</section>
+			</div>
 			<nav>
 				<ul>
 					<li><a href="#about">About me</a></li>
@@ -88,61 +123,181 @@
 					<li><a href="#hobby">Hobbies</a></li>
 				</ul>
 			</nav>
-			<section id="links">
-				<a href="https://github.com/skrasekmichael"><svg><use xlink:href="#icon-github"></use></svg></a>
-				<a href=""><svg><use xlink:href="#icon-twitter"></use></svg></a>
-				<a href=""><svg><use xlink:href="#icon-linkedin"></use></svg></a>
-				<a href=""><svg><use xlink:href="#icon-discord"></use></svg></a>
-			</section>
+			<div id="links">
+				<a title="GitHub" href="https://github.com/skrasekmichael"><svg><use xlink:href="#icon-github"></use></svg></a>
+				<a title="Twitter" href="#!"><svg><use xlink:href="#icon-twitter"></use></svg></a>
+				<a title="LinkedIn" href="#!"><svg><use xlink:href="#icon-linkedin"></use></svg></a>
+				<a title="Discord" href="#!"><svg><use xlink:href="#icon-discord"></use></svg></a>
+			</div>
 		</div>
 		<main>
-			<header id="about">
+			<header>
 				<section>
 					<h1>Michael Škrášek</h1>
-					<i>Software Engineer</i>
+					<em>Software Engineer</em>
 				</section>
 			</header>
-			<section>
+			<section id="about">
 				<h2>About me</h2>
 				<p>
 					Hello there, <br>
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
-					dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen 
-					book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially 
-					unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
-					recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					my name is Michael Škrášek and I'm software developer. I'm around <span class="age"></span> years old and I'm 
+					devoted to programming since 2014. Over the years I worked on various interesting project (from games and desktop apps throughout web apps to computer graphics algorithms),
+					you can check some of my work at my <a href="https://github.com/skrasekmichael">GitHub</a> or at <a href="https://www.itnetwork.cz/portfolio/software/6801">ITnetwork</a>, which
+					was my source of knowledge in my early programming stages. 
+				</p>
+				<p>
+					If I should describe myself as programmer, it would be Microsoft heavy. I prefer Windows over Linux, TypeScript over JS and 
+					C# over Java ... although I really like Kotlin, C# is my favorite language by far. Also I use 
+					Visual Studio and VS Code as programming environment. But my main distinguished characteristic would be preference of <a href="https://www.youtube.com/watch?v=SsoOG6ZeyUI"><b>tabs</b> over spaces</a>!
 				</p>
 			</section>
 			<section id="experience">
 				<h2>Experience</h2>
+				<ul class="section-list">
+					<li>
+						<div class="icon"><svg><use xlink:href="#icon-work"></use></svg></div>
+						<div class="data">
+							<div class="name">Internship at Tripomatic s.r.o.</div>
+							<div class="details">Android application, RESTful API client</div>
+							<div class="tags">
+								<div class="year">2018</div>
+								<div>Android</div>
+								<div>Kotlin</div>
+								<div>MVVM</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="icon"><svg><use xlink:href="#icon-project"></use></svg></div>
+						<div class="data">
+							<div class="name">High School graduation project</div>
+							<div class="details">Turn based strategy game in isometric space</div>
+							<div class="tags">
+								<div class="year">2019</div>
+								<div>C#</div>
+								<div>MonoGame</div>
+								<div title="result">Working demo</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="icon"><svg><use xlink:href="#icon-project"></use></svg></div>
+						<div class="data">
+							<a class="name" href="https://github.com/skrasekmichael/NonlinearFilters">Bachelor's thesis</a>
+							<div class="details">Nonlinear filtering of 3D image data</div>
+							<div class="tags">
+								<div class="year">2022</div>
+								<div>C#</div>
+								<div>Computer Graphics</div>
+								<div>High Performance</div>
+								<div title="result">In progress</div>
+							</div>
+						</div>
+					</li>
+				</ul>
 			</section>
 			<section id="education">
 				<h2>Education</h2>
-				<div class="education">
-					<div class="icon"><svg><use xlink:href="#icon-education"></use></svg></div>
-					<div class="data">
-						<a class="name" href="http://www.sspbrno.cz/">SPŠ Brno, Purkyňova, příspěvková organizace</a>
-						<div class="details">Programming &amp; Databases</div>
-						<div class="date">xxxx-yyyy</div>
-					</div>
-				</div>
-				<div class="education">
-					<div class="icon"><svg><use xlink:href="#icon-education"></use></svg></div>
-					<div class="data">
-						<a class="name" href="https://www.fit.vut.cz/.en">Brno University of Technology<br>Faculty of Information Technology</a>
-						<div class="details">Bachelor of Information Technology</div>
-						<div class="date">xxxx-yyyy</div>
-					</div>
-				</div>
+				<ul class="section-list">
+					<li>
+						<div class="icon" data-school-type="High School"><svg><use xlink:href="#icon-education"></use></svg></div>
+						<div class="data">
+							<a class="name" href="http://www.sspbrno.cz/">SPŠ Brno, Purkyňova, příspěvková organizace</a>
+							<div class="details">Maturity Diploma in Programming &amp; Databases</div>
+							<div class="date">2015 - 2019</div>
+						</div>
+					</li>
+					<li>
+						<div class="icon" data-school-type="University"><svg><use xlink:href="#icon-education"></use></svg></div>
+						<div class="data">
+							<a class="name" href="https://www.fit.vut.cz/.en">Brno University of Technology,<br>Faculty of Information Technology</a>
+							<div class="details">Bachelor's Degree in Information Technology</div>
+							<div class="date">2019 - now</div>
+						</div>
+					</li>
+				</ul>
 			</section>
 			<section id="skills">
-				<h2>Skills</h2>
+				<h2>Skills set</h2>
+				<ul class="skills-list">
+					<li>
+						<div class="name">C# &amp; Dotnet</div>
+						<ul class="check-list">
+							<li>Highly optimized code</li>
+							<li>ASP.NET core /Backend, RESTful API/</li>
+							<li>Blazor /Client side web app/</li>
+							<li>WPF /Desktop app/</li>
+							<li>MonoGame framework /Games/</li>
+						</ul>
+					</li>
+					<li>
+						<div class="name">Software Architecture</div>
+						<ul class="check-list">
+							<li>OOP programming</li>
+							<li>Design patterns</li>
+							<li>MVC &amp; MVVM architectural patterns</li>
+							<li>Dependency injection</li>
+							<li>3 tier architecture</li>
+						</ul>
+					</li>
+					<li>
+						<div class="name">Workflow</div>
+						<ul class="check-list">
+							<li>GIT versioning and source control</li>
+							<li>CI/CD</li>
+							<li>GitHub Actions, DevOps pipelines</li>
+							<li>Azure deployment</li>
+						</ul>
+					</li>
+					<li>
+						<div class="name">Databases</div>
+						<ul class="check-list">
+							<li>SQL language</li>
+							<li>MySQL and phpmyadmin administration</li>
+							<li>ORM /Entity framework/</li>
+							<li>Dotnet database migration</li>
+						</ul>
+					</li>
+					<li>
+						<div class="name">HTML &amp; CSS</div>
+						<ul class="check-list">
+							<li>Modern HTML5 &amp; CSS3 technologies</li>
+							<li>Bootstrap framework</li>
+							<li>Responsive web design</li>
+						</ul>
+					</li>
+					<li>
+						<div class="name">Kotlin</div>
+						<ul class="check-list">
+							<li>Android development</li>
+							<li>Web development using Spring Boot</li>
+						</ul>
+					</li>
+					<li>
+						<div class="name">Others</div>
+						<ul class="check-list">
+							<li>C/C++ /custom compiler/</li>
+							<li>PHP /IS/</li>
+							<li>TypeScript /VS Code extension/</li>
+							<li>PowerShell, Python ...</li>
+						</ul>
+					</li>
+				</ul>
 			</section>
 			<section id="hobby">
 				<h2>Hobbies</h2>
+				<p>Programming consumes a lot of free-time, but there is some room for rest of my hobbies: </p>
+				<ul class="hobbies-list check-list">
+					<li>I like team sports - floorball, basketball ... but mainly <b>football</b> as player as well as fan (Hala Madrid!).</li>
+					<li>I consider myself expert on <b>Cimrman theater</b> (yea, not only IT geek).</li>
+					<li><b>AoE II</b> is my childhood video game and it's also my favorite video game.</li>
+					<li>I really like reading of <b>fantasy novels</b>, Harry Potter or The Stormlight Archive are in my TOP and some Sci-fi novels too (Dune).</li>
+				</ul>
 			</section>
 			<footer>
-				Copyright &copy; Michael Škrášek 2022 for <a href="https://www.fit.vut.cz/study/course/ITW/.en">ITW</a> project at <a href="https://www.fit.vut.cz/.en">FIT BUT</a>
+				Copyright &copy; Michael Škrášek 2022 for <a href="https://www.fit.vut.cz/study/course/ITW/.en">ITW</a> 
+				project at <a href="https://www.fit.vut.cz/.en">BUT FIT</a>.
 			</footer>
 		</main>
 	</body>

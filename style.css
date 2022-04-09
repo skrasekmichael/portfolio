@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 :root {
-	--color-bar-primary: #7fc4c4;
-	--color-primary: #367d7d;
-	--color-secondary: #444444;
+	--color-bar-primary: rgb(127, 196, 196);
+	--color-primary: rgb(55, 125, 125);
+	--color-secondary: rgb(68, 68, 68);
 	--color-shadow: rgba(0, 0, 0, 0.2);
 
-	--color-header-gradient: #131e1e;
+	--color-header-gradient: rgb(19, 30, 30);
 	--color-header: linear-gradient(-90deg, var(--color-header-gradient), var(--color-primary));
 
 	--size-bar: 250px;
@@ -14,6 +14,7 @@
 	--size-nav-link-size: 65px;
 	--size-header: 300px;
 	--size-education: 110px;
+	--size-skill: 350px;
 }
 
 html {
@@ -59,6 +60,10 @@ body {
 	object-fit: cover;
 	border-radius: 100%;
 	filter: grayscale(0.4);
+}
+
+#profile a:hover img {
+	opacity: 0.9;
 }
 
 #profile .name {
@@ -182,7 +187,12 @@ main header h1 {
 }
 
 main section {
-	padding: 20px;
+	padding: 20px 20px 20px 30px;
+}
+
+
+main > section {
+	max-width: 1300px;
 }
 
 main section h2 {
@@ -190,37 +200,182 @@ main section h2 {
 	padding: 0;
 }
 
-/* section education */
-
-main section .education {
-	margin-top: 15px;
-	display: flex;
+main p {
+	line-height: 1.4rem;
+	text-align: justify;
 }
 
-.education .icon {
+/* experience and education list */
+
+.section-list {
+	margin: 0;
+	padding: 0;
+	margin-top: 10px;
+}
+
+.section-list li {
+	list-style-type: none;
+	margin-top: 1px;
+	display: flex;
+	border-bottom: dotted gray 1px;
+}
+
+.section-list li:first-of-type {
+	border-top: dotted gray 1px;
+}
+
+.section-list li .icon {
+	position: relative;
 	width: 80px;
 	height: 80px;
 	background-color: var(--color-secondary);
 	border-radius: 100%;
-	margin: 10px 5px;
+	margin: 20px 5px;
 }
 
-.education .icon svg {
+.section-list li .icon svg {
 	width: 100%;
 	height: 100%;
+	border-radius: 100%;
 	color: white
 }
 
-.education .data {
-	margin-left: 10px;
+.section-list li .data {
+	padding: 20px 20px 20px 10px;
+	display: flex;
+	flex-direction: column;
 }
 
-.education .data .name {
+.section-list li .data .name {
 	font-size: large;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+}
+
+.section-list li .data .details {
+	color: var(--color-secondary);
+	padding: 5px 0px;
+	flex-grow: 1;
+}
+
+/* experience specifics */
+
+.tags {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.tags div {
+	font-size: small;
+	padding: 3px 8px;
+	margin-right: 5px;
+	margin-top: 5px;
+	color: white;
+	background: var(--color-primary);
+	border-radius: 5px;
+}
+
+.tags div.year {
+	background-color: var(--color-secondary);
+}
+
+/* education specifics */
+
+#education li .data .date {
+	text-transform: uppercase;
+}
+
+[data-school-type]:before {
+	position: absolute;
+	content: attr(data-school-type);
+	color: crimson;
+	text-shadow: 0 0 5px black;
+	font-weight: bold;
+	font-size: smaller;
+	rotate: -17deg;
+	top: calc(100% - 22px);
+	width: calc(100% + 20px);
+	left: -5px;
+	text-align: center;
+}
+
+/* section skills */
+
+.skills-list {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+}
+
+.skills-list > li {
+	width: var(--size-skill);
+	background: var(--color-secondary);
+	box-shadow: 0 5px 10px #888888;
+	border-radius: 5px;
+	color: white;
+	margin: 10px;
+}
+
+.skills-list .name {
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bolder;
+	border-bottom: dotted var(--color-bar-primary) 1px;
+	padding: 20px;
+}
+
+.skills-list li {
+	list-style-type: none;
+}
+
+.skills-list > li > ul {
+	margin: 15px;
+	padding: 0;
+}
+
+/* section hobbies */
+
+.hobbies-list {
+	margin: 0;
+	padding: 0;
+}
+
+.hobbies-list li {
+	list-style-type: none;
+	margin: 10px;
 }
 
 /* footer */
 
 footer {
 	padding: 20px;
+}
+
+/* check list */
+.check-list > li {
+	position: relative;
+}
+
+.check-list > li:before {
+	display: inline-block;
+	position: relative;
+	content: "";
+	rotate: -45deg;
+	margin: 7px;
+	margin-right: 10px;
+	left: 0;
+	top: 2px;
+	width: 14px;
+	height: 7px;
+	background: transparent;
+	border-left-style: solid;
+	border-left-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-color: currentColor;
+	border-radius: 1px;
 }
