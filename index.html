@@ -9,11 +9,25 @@
 
 		<script>
 			window.onload = function() {
-				//render correct age int every class '.age'
+				//render correct age in every class '.age'
 				let elements = document.getElementsByClassName("age");
 				let age = (new Date().getFullYear() - 2000);
 				for (let i = 0; i < elements.length; i++) {
 					elements[i].innerHTML = age;
+				}
+
+				//menu toggle button
+				let bar = document.getElementById("bar")
+				let button = document.getElementById("toggle-menu");
+				button.onclick = function() {
+					bar.classList.toggle("toggle");
+				}
+
+				let scrollTriggers = document.getElementsByClassName("js-scroll-trigger");
+				for (let i = 0; i < scrollTriggers.length; i++) {
+					scrollTriggers[i].onclick = function() {
+						bar.classList.remove("toggle");
+					}
 				}
 			}
 		</script>
@@ -21,7 +35,7 @@
 		<title>Michael Škrášek | CV</title>
 	</head>
 	<body>
-		<div id="svgData">
+		<div id="svg-data">
 			<!-- SVG files downloaded from https://www.svgrepo.com/ -->
 			<svg xmlns="http://www.w3.org/2000/svg">
 				<symbol viewBox="0 0 64 64" id="icon-github">
@@ -105,35 +119,44 @@
 						l17.947-17.947c3.596-3.596,5.577-8.378,5.577-13.465S510.019,105.164,506.423,101.568z"/>
 					<polygon fill="currentColor"  points="440.072,140.986 266.446,314.612 266.213,341.775 293.377,341.542 467.004,167.917"/>
 				</symbol>
+				<symbol viewBox="0 0 92.833 92.833" id="icon-menu">
+					<title>Menu</title>
+					<path fill="currentColor" d="M89.834,1.75H3c-1.654,0-3,1.346-3,3v13.334c0,1.654,1.346,3,3,3h86.833c1.653,0,3-1.346,3-3V4.75
+						C92.834,3.096,91.488,1.75,89.834,1.75z"/>
+					<path fill="currentColor" d="M89.834,36.75H3c-1.654,0-3,1.346-3,3v13.334c0,1.654,1.346,3,3,3h86.833c1.653,0,3-1.346,3-3V39.75
+						C92.834,38.096,91.488,36.75,89.834,36.75z"/>
+					<path fill="currentColor" d="M89.834,71.75H3c-1.654,0-3,1.346-3,3v13.334c0,1.654,1.346,3,3,3h86.833c1.653,0,3-1.346,3-3V74.75
+						C92.834,73.095,91.488,71.75,89.834,71.75z"/>
+				</symbol>
 			</svg>
 		</div>
-
 		<div id="bar">
 			<div id="profile">
 				<a href="#"><img src="ich.jpg" alt="profile photo"/></a>
-				<div class="name">Michael Škrášek</div>
+				<a href="https://skrasekmichael.github.io/portfolio/" class="name">Michael Škrášek</a>
 				<a class="email" href="mailto:xskras01@vutbr.cz">xskras01@vutbr.cz</a>
 			</div>
 			<nav>
 				<ul>
-					<li><a href="#about">About me</a></li>
-					<li><a href="#experience">Experience</a></li>
-					<li><a href="#education">Education</a></li>
-					<li><a href="#skills">Skills</a></li>
-					<li><a href="#hobby">Hobbies</a></li>
+					<li><a href="#about" class="js-scroll-trigger">About me</a></li>
+					<li><a href="#experience" class="js-scroll-trigger">Experience</a></li>
+					<li><a href="#education" class="js-scroll-trigger">Education</a></li>
+					<li><a href="#skills" class="js-scroll-trigger">Skills</a></li>
+					<li><a href="#hobby" class="js-scroll-trigger">Hobbies</a></li>
 				</ul>
 			</nav>
 			<div id="links">
 				<a title="GitHub" href="https://github.com/skrasekmichael"><svg><use xlink:href="#icon-github"></use></svg></a>
-				<a title="Twitter" href="#!"><svg><use xlink:href="#icon-twitter"></use></svg></a>
+				<a title="Twitter" href="https://twitter.com/MichalSkrasek"><svg><use xlink:href="#icon-twitter"></use></svg></a>
 				<a title="LinkedIn" href="#!"><svg><use xlink:href="#icon-linkedin"></use></svg></a>
 				<a title="Discord" href="#!"><svg><use xlink:href="#icon-discord"></use></svg></a>
 			</div>
+			<button id="toggle-menu" aria-label="Toggle menu"><svg><use xlink:href="#icon-menu"></use></svg></button>
 		</div>
 		<main>
 			<header>
 				<section>
-					<h1>Michael Škrášek</h1>
+					<h1><a href="https://skrasekmichael.github.io/portfolio/">Michael Škrášek</a></h1>
 					<em>Software Engineer</em>
 				</section>
 			</header>
@@ -150,6 +173,15 @@
 					If I should describe myself as programmer, it would be Microsoft heavy. I prefer Windows over Linux, TypeScript over JS and 
 					C# over Java ... although I really like Kotlin, C# is my favorite language by far. Also I use 
 					Visual Studio and VS Code as programming environment. But my main distinguished characteristic would be preference of <a href="https://www.youtube.com/watch?v=SsoOG6ZeyUI"><b>tabs</b> over spaces</a>!
+				</p>
+				<p>
+					You can contact me with email <a href="mailto:xskras01@vutbr.cz">xskras01@vutbr.cz</a> or you can check me out on following services:
+					<ul>
+						<li><a href="https://github.com/skrasekmichael">github.com/skrasekmichael</a></li>
+						<li><a href="https://twitter.com/MichalSkrasek">twitter.com/MichalSkrasek</a></li>
+						<li><a href="#!">LinkedIn</a></li>
+						<li><a href="#!">Discord</a></li>
+					</ul>
 				</p>
 			</section>
 			<section id="experience">
@@ -262,7 +294,7 @@
 					<li>
 						<div class="name">HTML &amp; CSS</div>
 						<ul class="check-list">
-							<li>Modern HTML5 &amp; CSS3 technologies</li>
+							<li>Modern HTML5 &amp; CSS technologies</li>
 							<li>Bootstrap framework</li>
 							<li>Responsive web design</li>
 						</ul>
@@ -277,7 +309,7 @@
 					<li>
 						<div class="name">Others</div>
 						<ul class="check-list">
-							<li>C/C++ /custom compiler/</li>
+							<li>C/C++ /Compiler/</li>
 							<li>PHP /IS/</li>
 							<li>TypeScript /VS Code extension/</li>
 							<li>PowerShell, Python ...</li>
@@ -292,7 +324,7 @@
 					<li>I like team sports - floorball, basketball ... but mainly <b>football</b> as player as well as fan (Hala Madrid!).</li>
 					<li>I consider myself expert on <b>Cimrman theater</b> (yea, not only IT geek).</li>
 					<li><b>AoE II</b> is my childhood video game and it's also my favorite video game.</li>
-					<li>I really like reading of <b>fantasy novels</b>, Harry Potter or The Stormlight Archive are in my TOP and some Sci-fi novels too (Dune).</li>
+					<li>I really like reading <b>fantasy novels</b>, Harry Potter or The Stormlight Archive are in my TOP and some Sci-fi novels too (Dune).</li>
 				</ul>
 			</section>
 			<footer>
