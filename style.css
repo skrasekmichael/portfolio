@@ -318,6 +318,17 @@ main p {
 	line-height: 1.4rem;
 }
 
+/* section about */
+
+#about ul {
+	margin: 0;
+	padding: 0 0 0 30px;
+}
+
+#about ul li {
+	margin-top: 8px;
+}
+
 /* experience and education list */
 
 .section-list {
@@ -450,6 +461,10 @@ main p {
 .skills-list > li > ul {
 	margin: 15px;
 	padding: 0;
+}
+
+.skills-list a {
+	color: var(--color-bar-primary);
 }
 
 @media only screen and (min-width: 768px) {
