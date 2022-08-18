@@ -1,0 +1,59 @@
+name: deploy
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v1
+
+      - name: Set up npm
+        uses: actions/setup-node@v2
+
+      - name: Install html-minifier
+        run: |
+          sudo npm install html-minifier --location=global
+
+      - name: Minifying HTML
+        run: |
+          sudo html-minifier --input-dir . --output-dir . --remove-comments --collapse-whitespace --minify-css --minify-js --file-ext html
+
+      - name: Minifying CSS
+        run: |
+          sudo html-minifier --input-dir . --output-dir . --remove-comments --collapse-whitespace --minify-css --minify-js --file-ext css
+
+      - name: Copy content
+        run: |
+          rsync -av --progress . ./_site --exclude _site --exclude .git --exclude .github
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
