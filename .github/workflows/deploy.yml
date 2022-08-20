@@ -29,20 +29,16 @@ jobs:
         uses: actions/setup-node@v2
 
       - name: Install html-minifier
-        run: |
-          sudo npm install html-minifier --location=global
+        run: sudo npm install html-minifier --location=global
 
-      - name: Minifying HTML
-        run: |
-          sudo html-minifier --input-dir . --output-dir . --remove-comments --collapse-whitespace --minify-css --minify-js --file-ext html
+      - name: Minify HTML
+        run: sudo html-minifier --input-dir . --output-dir . --remove-comments --collapse-whitespace --minify-css --minify-js --file-ext html
 
-      - name: Minifying CSS
-        run: |
-          sudo html-minifier --input-dir . --output-dir . --remove-comments --collapse-whitespace --minify-css --minify-js --file-ext css
+      - name: Minify CSS
+        run: sudo html-minifier --input-dir . --output-dir . --remove-comments --collapse-whitespace --minify-css --file-ext css
 
       - name: Copy content
-        run: |
-          rsync -av --progress . ./_site --exclude _site --exclude .git --exclude .github
+        run: rsync -av --progress . ./_site --exclude _site --exclude .git --exclude .github
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
