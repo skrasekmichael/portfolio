@@ -11,7 +11,7 @@
 		<link rel="icon" type="image/x-icon" href="favicon.svg">
 
 		<script>
-			window.onload = function() {
+			window.addEventListener("DOMContentLoaded", (event) => {
 				//render correct age in every '.age' class
 				const elements = document.getElementsByClassName("age");
 				const age = (new Date().getFullYear() - 2000);
@@ -32,7 +32,7 @@
 						bar.classList.remove("toggle");
 					}
 				}
-			}
+			});
 		</script>
 
 		<title>Michael Škrášek | CV</title>
@@ -205,7 +205,10 @@
 						<div class="icon" data-school-type="University"><svg><use xlink:href="#icon-education"></use></svg></div>
 						<div class="data">
 							<a class="name" href="https://www.fit.vut.cz/.en">Brno University of Technology,<br>Faculty of Information Technology</a>
-							<div class="details">Master's Degree in <a href="https://www.vut.cz/en/students/programmes/programme/7887">Information Technology and Artificial Intelligence</a></div>
+							<div class="details">
+								Master's Degree in <a href="https://www.vut.cz/en/students/programmes/programme/7887">Information Technology and Artificial Intelligence</a>
+								with Major in <a href="https://www.fit.vut.cz/study/field/14972/.en">Application Development</a>
+							</div>
 							<div class="date">2022 - now</div>
 						</div>
 					</li>
