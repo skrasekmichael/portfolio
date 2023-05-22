@@ -37,6 +37,12 @@ jobs:
       - name: Minify CSS
         run: sudo html-minifier --input-dir . --output-dir . --remove-comments --collapse-whitespace --minify-css --file-ext css
 
+      - name: Install uglify-js
+        run: sudo npm install uglify-js --location=global
+
+      - name: Minify JS
+        run: sudo uglifyjs script.js -o script.js --mangle toplevel
+
       - name: Copy content
         run: rsync -av --progress . ./_site --exclude _site --exclude .git --exclude .github
 
