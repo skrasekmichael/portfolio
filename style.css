@@ -11,7 +11,6 @@
 	--size-profile: 100px;
 	--size-nav-link-size: 65px;
 	--size-header: 300px;
-	--size-education: 110px;
 	--size-skill: 350px;
 	--size-menu-height: 50px;
 }
@@ -340,6 +339,7 @@ main p {
 	margin-top: 1px;
 	display: flex;
 	border-bottom: dotted gray 1px;
+	align-items: center;
 }
 
 .section-list li:first-of-type {
@@ -367,6 +367,7 @@ main p {
 	padding: 20px 20px 20px 10px;
 	display: flex;
 	flex-direction: column;
+	align-self: normal;
 }
 
 .section-list li .data .name {
@@ -447,7 +448,7 @@ main p {
 	box-shadow: 0 5px 10px #888888;
 	border-radius: 5px;
 	color: white;
-	margin: 5px;
+	margin: 10px 10px 0 0;
 }
 
 .skills-list .name {
@@ -473,7 +474,7 @@ main p {
 
 @media only screen and (min-width: 768px) {
 	.skills-list > li {
-		margin: 10px;
+		margin: 20px 20px 0 0;
 	}
 }
 
