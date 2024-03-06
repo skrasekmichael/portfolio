@@ -425,6 +425,12 @@ main p {
 	text-align: center;
 }
 
+#education .pdf {
+	color: #888888;
+	font-weight: normal;
+	margin-left: 4px;
+}
+
 /* section skills */
 
 .skills-list {
