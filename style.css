@@ -313,6 +313,7 @@ main section h2 {
 
 main p {
 	line-height: 1.4rem;
+	text-align: justify;
 }
 
 /* section about */
@@ -332,6 +333,8 @@ main p {
 	margin: 0;
 	padding: 0;
 	margin-top: 10px;
+	display: flex;
+	flex-direction: column-reverse;
 }
 
 .section-list li {
@@ -342,7 +345,7 @@ main p {
 	align-items: center;
 }
 
-.section-list li:first-of-type {
+.section-list li:last-of-type {
 	border-top: dotted gray 1px;
 }
 
