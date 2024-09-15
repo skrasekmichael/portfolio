@@ -83,11 +83,12 @@ body {
 	text-align: center;
 }
 
-#profile .email {
+#profile .contact {
 	height: 0;
+	margin-top: 4px;
 }
 
-#profile .email:hover {
+#profile .contact:hover {
 	text-decoration: underline;
 }
 
@@ -124,7 +125,7 @@ body {
 		filter: grayscale(0.4);
 	}
 
-	#profile .email {
+	#profile .contact {
 		font-size: smaller;
 		color: var(--color-bar-primary);
 		text-decoration: none;
