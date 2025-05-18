@@ -13,6 +13,8 @@
 	--size-header: 300px;
 	--size-skill: 360px;
 	--size-menu-height: 50px;
+
+	--size-timespandot: 3px;
 }
 
 html {
@@ -408,6 +410,22 @@ main p {
 
 .tags div.year {
 	background-color: var(--color-secondary);
+}
+
+.timespan {
+	position: relative;
+	margin-left: calc(10px + var(--size-timespandot));
+}
+
+.timespan:before {
+	position: absolute;
+	content: " ";
+	background: white;
+	width: var(--size-timespandot);
+	height: var(--size-timespandot);
+	top: calc((100% - var(--size-timespandot)) / 2);
+	right: calc(100% + 6px);
+	border-radius: 100%;
 }
 
 /* education specifics */
